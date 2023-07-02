@@ -1,0 +1,5 @@
+ext.pathMapper = [:]
+ext.pathMapper.put('//wsl\$/Ubuntu/home/alex-candido/.sdkman/candidates/java/17.0.2-open/bin/java', '/home/alex-candido/.sdkman/candidates/java/17.0.2-open/bin/java')
+ext.pathMapper.put('//wsl\$/Ubuntu/home/alex-candido/_workspace/fullcycle/java-backend/fc3-admin-do-catalogo', '/home/alex-candido/_workspace/fullcycle/java-backend/fc3-admin-do-catalogo')
+ext.pathMapper.put("<<target java executable path>>", '/home/alex-candido/.sdkman/candidates/java/17.0.2-open/bin/java')
+ext.mapPath = { path -> pathMapper.get(path) ?: path }
