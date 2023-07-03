@@ -1,10 +1,11 @@
 package com.fullcycle.admin.catalogo.domain.category;
 
-import java.time.Instant;
-import java.util.UUID;
+import com.fullcycle.admin.catalogo.domain.AggregateRoot;
 
-public class Category {
-    private String id;
+import java.time.Instant;
+import java.util.Objects;
+
+public class Category extends AggregateRoot<CategoryID> {
     private String name;
     private String description;
     private boolean active;
@@ -13,31 +14,31 @@ public class Category {
     private Instant deletedAt;
 
     private Category(
-            final String id,
-            final String name,
-            final String description,
-            final boolean active,
-            final Instant createdAt,
-            final Instant updatedAt,
-            final Instant deletedAt
+            final CategoryID anId,
+            final String aName,
+            final String aDescription,
+            final boolean isActive,
+            final Instant aCreationDate,
+            final Instant aUpdateDate,
+            final Instant aDeleteDate
     ) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.active = active;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.deletedAt = deletedAt;
+        super(anId);
+        this.name = aName;
+        this.description = aDescription;
+        this.active = isActive;
+        this.createdAt = Objects.requireNonNull(aCreationDate, "'createdAt' should not be null");
+        this.updatedAt = Objects.requireNonNull(aUpdateDate, "'updatedAt' should not be null");
+        this.deletedAt = aDeleteDate;
     }
 
     public static Category newCategory(final String aName, final String aDescription, final boolean isActive) {
-        final var id = UUID.randomUUID().toString();
+        final var id = CategoryID.unique(); // generate id
         final var now = Instant.now();
         final var deletedAt = isActive ? null : now;
         return new Category(id, aName, aDescription, isActive, now, now, deletedAt);
     }
 
-    public String getId() {
+    public CategoryID getId() {
         return id;
     }
 
