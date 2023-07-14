@@ -18,6 +18,7 @@ public class DomainException extends RuntimeException {
     }
 
     public static DomainException with(final List<Error> anErrors) {
+
         return new DomainException("", anErrors);
     }
 
