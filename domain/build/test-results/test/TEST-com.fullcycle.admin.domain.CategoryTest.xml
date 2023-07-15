@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.fullcycle.admin.domain.CategoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-07-14T19:55:10" hostname="LAPTOP-TJK6IAE0" time="0.065">
+<testsuite name="com.fullcycle.admin.domain.CategoryTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2023-07-15T01:14:21" hostname="LAPTOP-TJK6IAE0" time="0.08">
   <properties/>
-  <testcase name="givenAValidParams_whenCallNewCategory_thenInstantiateACategory()" classname="com.fullcycle.admin.domain.CategoryTest" time="0.045"/>
-  <testcase name="givenAnInvalidNullName_whenCallNewCategoryAndValidate_thenShouldReceiveError()" classname="com.fullcycle.admin.domain.CategoryTest" time="0.016"/>
+  <testcase name="givenAnInvalidEmptyName_whenCallNewCategoryAndValidate_thenShouldReceiveError()" classname="com.fullcycle.admin.domain.CategoryTest" time="0.048"/>
+  <testcase name="givenAnInvalidNameLengthMoreThan255_whenCallNewCategoryAndValidate_thenShouldReceiveError()" classname="com.fullcycle.admin.domain.CategoryTest" time="0.002"/>
+  <testcase name="givenAValidFalseIsActive_whenCallNewCategoryAndValidate_thenShouldReceiveOK()" classname="com.fullcycle.admin.domain.CategoryTest" time="0.005"/>
+  <testcase name="givenAValidEmptyDescription_whenCallNewCategoryAndValidate_thenShouldReceiveOK()" classname="com.fullcycle.admin.domain.CategoryTest" time="0.003"/>
+  <testcase name="givenAnInvalidNameLengthLessThan3_whenCallNewCategoryAndValidate_thenShouldReceiveError()" classname="com.fullcycle.admin.domain.CategoryTest" time="0.002"/>
+  <testcase name="givenAValidParams_whenCallNewCategory_thenInstantiateACategory()" classname="com.fullcycle.admin.domain.CategoryTest" time="0.003"/>
+  <testcase name="givenAnInvalidNullName_whenCallNewCategoryAndValidate_thenShouldReceiveError()" classname="com.fullcycle.admin.domain.CategoryTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
