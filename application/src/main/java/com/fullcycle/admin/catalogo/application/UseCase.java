@@ -4,7 +4,10 @@ import com.fullcycle.admin.catalogo.domain.category.Category;
 public class UseCase {
 
     public Category execute() {
-        return new Category();
+        final String aName = null;
+        final var aDescription = "A categoria mais assistida";
+        final var aIsActive = true;
+        return Category.newCategory(aName, aDescription, aIsActive);
     }
 
 }

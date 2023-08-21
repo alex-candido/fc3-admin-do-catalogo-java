@@ -4,7 +4,7 @@ import com.fullcycle.admin.catalogo.domain.validation.Error;
 
 import java.util.List;
 
-public class DomainException extends RuntimeException {
+public class DomainException extends NoStacktraceException {
 
     protected final List<Error> errors;
 
@@ -18,6 +18,7 @@ public class DomainException extends RuntimeException {
     }
 
     public static DomainException with(final List<Error> anErrors) {
+
         return new DomainException("", anErrors);
     }
 
